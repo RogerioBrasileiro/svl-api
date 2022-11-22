@@ -1,0 +1,26 @@
+{
+  "name": "svl-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RogerioBrasileiro/svl-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RogerioBrasileiro/svl-api/issues"
+  },
+  "homepage": "https://github.com/RogerioBrasileiro/svl-api#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^6.7.3",
+    "nodemon": "^2.0.20"
+  }
+}
