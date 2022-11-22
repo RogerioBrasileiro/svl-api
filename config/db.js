@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
+mongoose.connect('mongodb+srv://rsob_2109:<password>@svl-db.atpkc5p.mongodb.net/');
 
 exports.test = function(req, res) {
   var db = mongoose.connection;
