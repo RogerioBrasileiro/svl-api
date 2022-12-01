@@ -1,6 +1,6 @@
 const express = require('express')
 const db = require('./config/db')
-//const livros = require("./")
+const livros = require("./models/livros")
 
 db.on('error', console.log.bind('Erro ao conectar'))
 
