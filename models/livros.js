@@ -5,9 +5,9 @@ const livroSchema = new mongoose.Schema({
     titulo: { type: String, required: true },
     ano: { type: String, required: true },
     autor: { type: String, required: true },
-    editora: { type: String, required: true }
-    genero: { type: String, required: true }
-    numeroPaginas: { type: Number }
+    editora: { type: String, required: true },
+    genero: { type: String, required: true },
+    numeroPaginas: { type: Number },
     favorite: { type: Boolean }
 });
 //se a collection não for criada, é criado automaticamente no código
