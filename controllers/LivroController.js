@@ -11,7 +11,7 @@ class LivroController {
     static findById = (req, res) => {
         const id = req.params.id
         livros.findById(id, (err, livros) => {
-           //trata o erro ou o sucesso, baseado na função de callback, utilizando
+            //trata o erro ou o sucesso, baseado na função de callback, utilizando
             if (err) {
                 res.status(404).send({ message: 'Livro não encontado', err: err.message })
             } else {
@@ -33,6 +33,27 @@ class LivroController {
             }
         })
     }
+    static updateBook = (req, res) => {
+        const id = req.params.id
+        livros.findOneAndUpdate(id, { $set: req.body }, (err) => {
+            if (err) {
+                res.status(500).json({ message: 'Erro ao atualizar' })
+            }
+            res.status(204).json('Atualizado')
+        })
+    }
+    static deleteBook = (req, res) => {
+        const id = req.params.id
+        livros.findByIdAndDelete(id, (err) => {
+            if (err) {
+                res.status(500).send('Erro ao deletar')
+            } else {
+                res.status(200).send('Deletado')
+            }
+        })
+
+    }
+
 }
 
 module.exports = LivroController

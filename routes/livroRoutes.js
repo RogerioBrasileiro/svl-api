@@ -7,6 +7,8 @@ routes
     .get('/livros', LivroController.findAll)
     .get('/livro/:id', LivroController.findById)
     .post('/livro', LivroController.createBook)
+    .put('/livro/:id', LivroController.updateBook)
+    .delete('/livro/:id', LivroController.deleteBook)
 
 
 
