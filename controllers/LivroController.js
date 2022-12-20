@@ -29,19 +29,29 @@ class LivroController {
             if (err) {
                 res.status(500).send({ message: 'Erro ao salvar o livro.' })
             } else {
-                res.status(201).send(livro.toJSON())
+                res.status(201).json(livro)
             }
         })
     }
+
     static updateBook = (req, res) => {
-        const id = req.params.id
-        livros.findOneAndUpdate(id, { $set: req.body }, (err) => {
+        let id = req.params.id
+        livros.findByIdAndUpdate(id, { $set: req.body }, (err) => {
             if (err) {
-                res.status(500).json({ message: 'Erro ao atualizar' })
-            }
-            res.status(204).json('Atualizado')
+                res.status(404).send(
+                    {
+                        message: 'Erro ao atualizar',
+                        error: err.message
+                    })
+            } else (
+                res.status(200).send('Atualizado')
+            )
+
         })
+
     }
+
+
     static deleteBook = (req, res) => {
         const id = req.params.id
         livros.findByIdAndDelete(id, (err) => {
