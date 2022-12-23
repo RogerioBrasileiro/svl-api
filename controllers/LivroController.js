@@ -3,7 +3,9 @@ const livros = require('../models/livros')
 class LivroController {
 
     static findAll = (req, res) => {
-        livros.find((err, livros) => {
+        livros.find()
+        .populate('autores')
+        .exec((err, livros) => {
             res.status(200).json(livros)
         })
     }
