@@ -25,15 +25,15 @@ const hostname = 'localhost'
 const port = 5000
 routes(app)
 
-app.get('/', (req, res) => {
-    res.send('Servidor subiu')
-})
+// app.get('/', (req, res) => {
+//     res.send('Servidor subiu')
+// })
 
-app.get('/livros', (req, res) => {
-    livros.find((error, livros) => {
-        res.status(200).json(livros)
-    })
-})
+// app.get('/livros', (req, res) => {
+//     livros.find((error, livros) => {
+//         res.status(200).json(livros)
+//     })
+// })
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)

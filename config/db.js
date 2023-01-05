@@ -12,7 +12,7 @@
 // };
 
 const mongoose = require('mongoose')
-
+mongoose.set("strictQuery", true)
 mongoose.connect('mongodb+srv://rsob_2109:rsob2109@svl-db.atpkc5p.mongodb.net/svl');
 
 let db = mongoose.connection;
