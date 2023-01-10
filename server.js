@@ -22,7 +22,7 @@ db.once('open', () => {
 // )
 
 const hostname = 'localhost'
-const port = 1000
+const port = 10000
 routes(app)
 
 // app.get('/', (req, res) => {
